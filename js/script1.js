@@ -1,27 +1,19 @@
-//Objeto Math
-console.log(Math.PI);
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 
-//ler um valor e fazer o mesmo elevado ao quadrado
-let v = Number(prompt("Digite um valor: "));
-console.log(Math.pow(v,2));
-//ou
-console.log(v**2);
+let bolinha={
+    cor: "red",
+    x: Math.round(Math.random()*500),
+    y: Math.round(Math.random()*500),
+    raio: 20,
+}
 
-//valor absoluto
-console.log(Math.abs(5));
-console.log(Math.abs(-5));
+function desenhar(){
+	ctx.clearRect(0, 0, canvas.width, canvas.height);	
+	ctx.beginPath();
+	ctx.arc(bolinha.x, bolinha.y, bolinha.raio, 0, 2 * Math.PI);
+	ctx.fillStyle = bolinha.cor;
+	ctx.fill();
+}
 
-//raiz quadrada
-console.log(Math.sqrt(4));
-
-//arredondando valores
-let valor = 3.5;
-console.log("Round: "+ Math.round(valor));
-console.log("Floor: "+ Math.floor(valor));
-console.log("Ceil: "+ Math.ceil(valor));
-
-//valor randomicos de 0 - 1
-console.log(Math.random());
-
-//valores inteiros de 0 - 10
-console.log(Math.round(Math.random() * 10));
+setTimeout(desenhar, 1000);
