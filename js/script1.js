@@ -16,4 +16,4 @@ function desenhar(){
 	ctx.fill();
 }
 
-setTimeout(desenhar, 1000);
+setTimeout(desenhar, 500);
